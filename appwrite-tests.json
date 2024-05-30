@@ -1,6 +1,6 @@
 {
-    "projectId": "1234",
-    "projectId": "$id",
+    "projectId": "2",
+    "projectId": "2",
     "projectSettings": {
         "services": {
             "account": true,
