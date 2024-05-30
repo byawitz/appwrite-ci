@@ -19,13 +19,13 @@ jobs:
           node-version: 21
           cache: 'npm'
       - name: Login
-        run: npx appwrite-cli-beta@0.16.87-e88c3240b2cb8d9ae6453bf09d4ecdcd82bd95 login --email "${{ secretes.EMAIL }}" --password "${{ secretes.EMAIL }}"
+        run: npx appwrite-cli-beta@0.16.87-e88c3240b2cb8d9ae6453bf09d4ecdcd82bd95 login --email "${{ secrets.EMAIL }}" --password "${{ secrets.EMAIL }}"
       - name: Pull all resources
         run: npx appwrite-cli-beta@0.16.87-e88c3240b2cb8d9ae6453bf09d4ecdcd82bd95 pull all --all --force
       - name: Create a new project
         run: |
           id="$(date +%N)-${{ github.event.inputs.project_name }}"
-          npx appwrite-cli-beta@0.16.87-e88c3240b2cb8d9ae6453bf09d4ecdcd82bd95 projects create --projectId "$id" --name "${{ github.event.inputs.project_name }}" --teamId "${{ secretes.ORGANIZATION }}"
+          npx appwrite-cli-beta@0.16.87-e88c3240b2cb8d9ae6453bf09d4ecdcd82bd95 projects create --projectId "$id" --name "${{ github.event.inputs.project_name }}" --teamId "${{ secrets.ORGANIZATION }}"
           sed -E -i 's#"projectId": "(\S+)"#"projectId": "$id"#' appwrite.json
           sed -E -i 's#"projectName": "(\S+)"#"projectId": "${{ github.event.inputs.project_name }}"#' appwrite.json
       - name: Push all resources
