@@ -24,6 +24,6 @@ jobs:
           id="$(date +%N)-${{ github.event.inputs.project_name }}"
           npx appwrite-cli-beta@0.16.87-e88c3240b2cb8d9ae6453bf09d4ecdcd82bd95 projects create --projectId "$id" --name "${{ github.event.inputs.project_name }}" --teamId "${{ secrets.ORGANIZATION }}"
           sed -E -i 's#"projectId": "(\S+)"#"projectId": "$id"#' appwrite.json
-          sed -E -i 's#"projectName": "(\S+)"#"projectId": "${{ github.event.inputs.project_name }}"#' appwrite.json
+          sed -E -i 's#"projectName": "(\S+)"#"projectName": "${{ github.event.inputs.project_name }}"#' appwrite.json
       - name: Push all resources
         run: npx appwrite-cli-beta@0.16.87-e88c3240b2cb8d9ae6453bf09d4ecdcd82bd95 push all --all --force
