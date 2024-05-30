@@ -15,4 +15,4 @@ jobs:
       - name: Login
         run: npx appwrite-cli-beta@0.16.87-e88c3240b2cb8d9ae6453bf09d4ecdcd82bd95 login --email ${{ secrets.EMAIL }} --password ${{ secrets.PASSWORD }}
       - name: Migrate collections
-        run: npx appwrite-cli-beta@0.16.87-e88c3240b2cb8d9ae6453bf09d4ecdcd82bd95 push collections --all --force
+        run: npx appwrite-cli-beta@0.16.87-e88c3240b2cb8d9ae6453bf09d4ecdcd82bd95 push collections --all
