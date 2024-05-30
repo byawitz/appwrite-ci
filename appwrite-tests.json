@@ -1,0 +1,126 @@
+{
+    "projectId": "1234",
+    "projectId": "$id",
+    "projectSettings": {
+        "services": {
+            "account": true,
+            "avatars": true,
+            "databases": true,
+            "locale": true,
+            "health": true,
+            "storage": true,
+            "teams": true,
+            "users": true,
+            "functions": true,
+            "graphql": true,
+            "messaging": true
+        },
+        "auth": {
+            "methods": {
+                "jwt": true,
+                "phone": true,
+                "invites": true,
+                "anonymous": true,
+                "email-otp": true,
+                "magic-url": true,
+                "email-password": true
+            },
+            "security": {
+                "duration": 31536000,
+                "limit": 0,
+                "sessionsLimit": 10,
+                "passwordHistory": 0,
+                "passwordDictionary": false,
+                "personalDataCheck": false
+            }
+        }
+    },
+    "databases": [
+        {
+            "$id": "6605888369ce9c5cccf4",
+            "name": "b",
+            "$createdAt": "2024-03-28T15:10:59.434+00:00",
+            "$updatedAt": "2024-03-28T15:10:59.434+00:00",
+            "enabled": true
+        }
+    ],
+    "collections": [
+        {
+            "$id": "6605889681f34468188c",
+            "$permissions": [],
+            "databaseId": "6605888369ce9c5cccf4",
+            "name": "a",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [],
+            "indexes": []
+        }
+    ],
+    "buckets": [
+        {
+            "$id": "6621555695fab893bdc6",
+            "$createdAt": "2024-04-18T17:16:06.618+00:00",
+            "$updatedAt": "2024-05-16T19:05:44.471+00:00",
+            "$permissions": [],
+            "fileSecurity": false,
+            "name": "s",
+            "enabled": true,
+            "maximumFileSize": 52428800,
+            "allowedFileExtensions": [],
+            "compression": "none",
+            "encryption": true,
+            "antivirus": true
+        }
+    ],
+    "functions": [
+        {
+            "$id": "665893d300080c6138dc",
+            "name": "TestFunction",
+            "runtime": "node-16.0",
+            "execute": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15,
+            "enabled": true,
+            "logging": true,
+            "entrypoint": "src/main.js",
+            "commands": "npm install",
+            "ignore": [
+                "node_modules",
+                ".npm"
+            ],
+            "path": "functions/665893d300080c6138dc",
+            "$createdAt": "2024-05-30T14:57:24.129+00:00",
+            "$updatedAt": "2024-05-30T14:58:14.921+00:00",
+            "live": true,
+            "deployment": "66589400cafc5a4e97d4",
+            "vars": [],
+            "version": "v3",
+            "installationId": "",
+            "providerRepositoryId": "",
+            "providerBranch": "",
+            "providerRootDirectory": "",
+            "providerSilentMode": false
+        }
+    ],
+    "teams": [
+        {
+            "$id": "6658945000087c0b01ee",
+            "name": "a"
+        }
+    ],
+    "topics": [
+        {
+            "$id": "665894b781f78b99c9fc",
+            "$createdAt": "2024-05-30T15:01:11.533+00:00",
+            "$updatedAt": "2024-05-30T15:01:11.533+00:00",
+            "name": "My Awesome Topic",
+            "emailTotal": 0,
+            "smsTotal": 0,
+            "pushTotal": 0,
+            "subscribe": [
+                "users"
+            ]
+        }
+    ]
+}
