@@ -1,0 +1,30 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test action
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - uses: appwrite/setup-for-actions@feat-cli-g2
+        with:
+          method: email
+          email: ${{ secrets.EMAIL }}
+          password: ${{ secrets.PASSWORD }}
+          actions: |-
+            whoami
+      - uses: appwrite/setup-for-actions@feat-cli-g2
+        with:
+          method: key
+          key: ${{ secrets.API_KEY }}
+          project: ${{ secrets.PROJECT_ID }}
+          self_signed: true
+          force: true
+          all: true
+          actions: |-
+            pull functions --all --force 
+            push functions --all --force --async
